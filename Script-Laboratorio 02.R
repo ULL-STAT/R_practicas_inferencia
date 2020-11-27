@@ -123,9 +123,9 @@ BinomDiffCI(x1=24, n1=106, x2=41, n2=94, method="wald")
 
 #################################
 ## EJERCICIO PARA PRACTICAR
-#Intervalo de confianza al 99% de la diferencia de proporciones en la talla 
+#Intervalo de confianza al 99% de la diferencia de proporciones 
 #de los individuos bebedores hipertensos y 
-#la de los individuos bebedores NO hipertensos (varianzas desconocidas y distintas)
+#la de los individuos bebedores NO hipertensos 
 table(..., ... )
 margin.table(table(... ,... ),2)
 BinomDiffCI(x1=..., n1=...  , x2=... , n2=... , method="wald")
@@ -172,6 +172,16 @@ set.seed(19485)
 ci.examp(mean.sim = 10, sd = 1.4, n = 25, reps = 100, conf.level = 0.95)
 
 
+
+
+
+waldInterval <- function(x, n, conf.level = 0.95){
+  p <- x/n
+  sd <- sqrt(p*((1-p)/n))
+  z <- qnorm(c( (1 - conf.level)/2, 1 - (1-conf.level)/2)) #returns the value of thresholds at which conf.level has to be cut at. for 95% CI, this is -1.96 and +1.96
+  ci <- p + z*sd
+  return(ci)
+}
 
 
 
