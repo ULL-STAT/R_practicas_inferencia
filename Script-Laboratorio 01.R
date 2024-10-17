@@ -81,7 +81,24 @@ qnorm(...,...,...,lower.tail = FALSE)
 
 #################################
 
+#################################
+## AVANZADO: EJERCICIO PARA PRACTICAR
+#Recuerda que si Xi ~ Be(p) entonces T=X1+ ...+ Xn ~ Binom( ?, ? )
 
+#Si X1~ Be(p=0.3), hallar la probabilidad que x1 sea igual a 1
+???(...,size=...,prob=...)
+#Si X1,...,X10 m.a.s. con Xi~Be(p=0.3), hallar la probabilidad que suma(Xi) sea menor o igual a 3
+???(...,size=...,prob=...)
+
+
+
+#Recuerda que si Xi ~ Exp(beta) entonces T=X1+ ...+ Xn ~ Gamma(alfa=?, beta=?)
+
+#Si X1~ Exp(beta=0.3), hallar la probabilidad que x1 sea menor o igual a 10
+???(....,rate=...)
+#Si X1,...,X10 m.a.s. con Xi~Exp(beta=0.3), hallar la probabilidad que suma(Xi) sea menor o igual a 10
+???(...,shape=...,rate=...)
+#################################
 
 
 
