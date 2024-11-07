@@ -177,12 +177,10 @@ ci.examp(mean.sim = 10, sd = 1.4, n = 25, reps = 100, conf.level = 0.95)
 
 
 ### Ejercicio 05 (Intervalo de Wald)
+library(DescTools)
 waldInterval <- function(x, n, conf.level = 0.95){
-  p <- x/n
-  sd <- sqrt(p*((1-p)/n))
-  z <- qnorm(c( (1 - conf.level)/2, 1 - (1-conf.level)/2)) 
-  ci <- p + z*sd
-  return(ci)
+  ci<-BinomCI (x=15, n=20, conf.level=0.95,method='wald') 
+  return(ci[2:3])
 }
 #example
 waldInterval(x = 20, n =40) #this will return 0.345 and 0.655
