@@ -17,20 +17,10 @@
 
 #load("madera.RData")
 load(url("https://github.com/ULL-STAT/R_practicas_inferencia/blob/master/madera.RData?raw=true"))
+madera
 
 str(madera)
 attach(madera)
-
-names(attributes(madera)$variable.labels)[1]<-"tipo"
-attributes(madera)$variable.labels[1]<-"tipo de madera"
-
-madera$tipo<-c(rep("pino",4),rep("cedro",4),rep("arce",4),rep("haya",4),rep("caoba",4))
-names(madera)[1]<-"tipo"
-save(madera,file="madera2.RData")
-
-str(madera)
-
-madera
 
 mod1F<-lm(desgaste~tipo)               #ajusta un modelo lineal
 
